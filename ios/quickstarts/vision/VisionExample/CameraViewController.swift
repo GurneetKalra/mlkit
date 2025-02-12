@@ -53,6 +53,16 @@ class CameraViewController: UIViewController {
     return view
   }()
 
+  private lazy var poseDetector: PoseDetector = {
+    let options = PoseDetectorOptions()
+    options.detectorMode = .stream  // Optimize for video
+    return PoseDetector.poseDetector(options: options)
+  }()
+
+  private var isProcessingFrame = false
+  private let minimumFrameInterval: TimeInterval = 0.033
+  private var lastFrameProcessingTime: TimeInterval = 0
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -107,7 +117,7 @@ class CameraViewController: UIViewController {
   private func setUpCaptureSessionOutput() {
     sessionQueue.async {
       self.captureSession.beginConfiguration()
-      self.captureSession.sessionPreset = AVCaptureSession.Preset.medium
+      self.captureSession.sessionPreset = AVCaptureSession.Preset.high
 
       let output = AVCaptureVideoDataOutput()
       output.videoSettings = [
@@ -230,8 +240,15 @@ class CameraViewController: UIViewController {
 private enum Constant {
   static let videoDataOutputQueueLabel = "com.google.mlkit.visiondetector.VideoDataOutputQueue"
   static let sessionQueueLabel = "com.google.mlkit.visiondetector.SessionQueue"
-  static let smallDotRadius: CGFloat = 4.0
-  static let lineWidth: CGFloat = 3.0
+  
+  // Visualization constants
+  static let jointRadius: CGFloat = 8.0        // Bigger dots for joints
+  static let jointColor = UIColor.green        // Green dots for joints
+  static let boneLineWidth: CGFloat = 3.0      // Thicker lines for bones
+  static let boneColor = UIColor.white         // White lines for bones
+  
+  // Optional: Add confidence threshold
+  static let minConfidence: Float = 0.5        // Only show points above this confidence
 }
 
 // MARK: - AVCaptureVideoDataOutputSampleBufferDelegate
@@ -242,10 +259,20 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     didOutput sampleBuffer: CMSampleBuffer,
     from connection: AVCaptureConnection
   ) {
+    // Skip processing if we're already processing a frame
+    guard !isProcessingFrame else { return }
+    
+    // Throttle frame processing
+    let currentTime = CACurrentMediaTime()
+    guard (currentTime - lastFrameProcessingTime) >= minimumFrameInterval else { return }
+    
     guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
       print("Failed to get image buffer from sample buffer.")
       return
     }
+    
+    isProcessingFrame = true
+    lastFrameProcessingTime = currentTime
     
     let visionImage = VisionImage(buffer: sampleBuffer)
     let orientation = UIUtilities.imageOrientation(
@@ -256,35 +283,128 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     let imageWidth = CGFloat(CVPixelBufferGetWidth(imageBuffer))
     let imageHeight = CGFloat(CVPixelBufferGetHeight(imageBuffer))
     
-    let poseDetector = PoseDetector.poseDetector(options: PoseDetectorOptions())
-    
-    var poses: [Pose]
-    do {
-      poses = try poseDetector.results(in: visionImage)
-    } catch let error {
-      print("Failed to detect poses with error: \(error.localizedDescription).")
-      return
-    }
-    
-    DispatchQueue.main.sync {
-      self.updatePreviewOverlayViewWithImageBuffer(imageBuffer)
-      self.removeDetectionAnnotations()
+    // Process frame in background
+    DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+      guard let self = self else { return }
       
-      for pose in poses {
-        let poseOverlayView = UIUtilities.createPoseOverlayView(
-          forPose: pose,
-          inViewWithBounds: self.annotationOverlayView.bounds,
-          lineWidth: Constant.smallDotRadius,
-          dotRadius: Constant.smallDotRadius,
-          positionTransformationClosure: { (position) -> CGPoint in
-            return self.normalizedPoint(
-              fromVisionPoint: position,
-              width: imageWidth,
-              height: imageHeight)
+      do {
+        let poses = try self.poseDetector.results(in: visionImage)
+        
+        // Update UI on main thread
+        DispatchQueue.main.async {
+          self.updatePreviewOverlayViewWithImageBuffer(imageBuffer)
+          self.removeDetectionAnnotations()
+          
+          for pose in poses {
+            let poseOverlayView = UIUtilities.createCustomPoseOverlayView(
+              forPose: pose,
+              inViewWithBounds: self.annotationOverlayView.bounds,
+              lineWidth: Constant.boneLineWidth,
+              dotRadius: Constant.jointRadius,
+              positionTransformationClosure: { (position) -> CGPoint in
+                return self.normalizedPoint(
+                  fromVisionPoint: position,
+                  width: imageWidth,
+                  height: imageHeight)
+              }
+            )
+            self.annotationOverlayView.addSubview(poseOverlayView)
           }
-        )
-        self.annotationOverlayView.addSubview(poseOverlayView)
+          
+          self.isProcessingFrame = false
+        }
+      } catch {
+        print("Failed to detect poses with error: \(error.localizedDescription).")
+        self.isProcessingFrame = false
       }
     }
   }
+}
+
+// Add this extension to create custom visualization
+extension UIUtilities {
+    static func createCustomPoseOverlayView(
+        forPose pose: Pose,
+        inViewWithBounds bounds: CGRect,
+        lineWidth: CGFloat,
+        dotRadius: CGFloat,
+        positionTransformationClosure: (VisionPoint) -> CGPoint
+    ) -> UIView {
+        let overlayView = UIView(frame: bounds)
+        
+        // Define the landmarks we want to show
+        let allowedLandmarkTypes: Set<PoseLandmarkType> = [
+            // Body landmarks
+            .leftShoulder, .rightShoulder,
+            .leftElbow, .rightElbow,
+            .leftWrist, .rightWrist,
+            .leftHip, .rightHip,
+            .leftKnee, .rightKnee,
+            .leftAnkle, .rightAnkle,
+            // Face landmarks (only nose and sides)
+            .nose,
+            .leftEar, .rightEar
+        ]
+        
+        // Create dots for allowed landmarks
+        for landmark in pose.landmarks {
+            if allowedLandmarkTypes.contains(landmark.type) && 
+               landmark.inFrameLikelihood >= Constant.minConfidence {
+                let point = positionTransformationClosure(landmark.position)
+                let dotView = UIView(frame: CGRect(
+                    x: point.x - dotRadius,
+                    y: point.y - dotRadius,
+                    width: dotRadius * 2,
+                    height: dotRadius * 2
+                ))
+                dotView.backgroundColor = Constant.jointColor
+                dotView.layer.cornerRadius = dotRadius
+                overlayView.addSubview(dotView)
+            }
+        }
+        
+        // Draw lines between connected landmarks
+        let connectedParts: [(VisionPoint, VisionPoint)] = [
+            // Upper body
+            (pose.landmark(ofType: .leftShoulder).position, pose.landmark(ofType: .rightShoulder).position),
+            (pose.landmark(ofType: .leftShoulder).position, pose.landmark(ofType: .leftElbow).position),
+            (pose.landmark(ofType: .leftElbow).position, pose.landmark(ofType: .leftWrist).position),
+            (pose.landmark(ofType: .rightShoulder).position, pose.landmark(ofType: .rightElbow).position),
+            (pose.landmark(ofType: .rightElbow).position, pose.landmark(ofType: .rightWrist).position),
+            
+            // Torso
+            (pose.landmark(ofType: .leftShoulder).position, pose.landmark(ofType: .leftHip).position),
+            (pose.landmark(ofType: .rightShoulder).position, pose.landmark(ofType: .rightHip).position),
+            (pose.landmark(ofType: .leftHip).position, pose.landmark(ofType: .rightHip).position),
+            
+            // Lower body
+            (pose.landmark(ofType: .leftHip).position, pose.landmark(ofType: .leftKnee).position),
+            (pose.landmark(ofType: .leftKnee).position, pose.landmark(ofType: .leftAnkle).position),
+            (pose.landmark(ofType: .rightHip).position, pose.landmark(ofType: .rightKnee).position),
+            (pose.landmark(ofType: .rightKnee).position, pose.landmark(ofType: .rightAnkle).position),
+            
+            // Face connections (only to nose)
+            (pose.landmark(ofType: .leftEar).position, pose.landmark(ofType: .nose).position),
+            (pose.landmark(ofType: .rightEar).position, pose.landmark(ofType: .nose).position)
+        ]
+        
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.strokeColor = Constant.boneColor.cgColor
+        shapeLayer.lineWidth = lineWidth
+        shapeLayer.fillColor = nil
+        
+        let path = UIBezierPath()
+        for (start, end) in connectedParts {
+            let startPoint = positionTransformationClosure(start)
+            let endPoint = positionTransformationClosure(end)
+            
+            path.move(to: startPoint)
+            path.addLine(to: endPoint)
+        }
+        
+        shapeLayer.path = path.cgPath
+        overlayView.layer.addSublayer(shapeLayer)
+        
+        return overlayView
+    }
 }

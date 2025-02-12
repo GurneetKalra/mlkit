@@ -11,7 +11,6 @@
 		1001E6F720CEE0DD00445CB3 /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1001E6F620CEE0DD00445CB3 /* UIUtilities.swift */; };
 		1001E6F920CF021E00445CB3 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1001E6F820CF021E00445CB3 /* CameraViewController.swift */; };
 		1001E6FD20CF0C8F00445CB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1001E6FC20CF0C8F00445CB3 /* Assets.xcassets */; };
-		10224B582087E43100A77316 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10224B572087E43100A77316 /* ViewController.swift */; };
 		10224B762087E5A900A77316 /* grace_hopper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10224B702087E5A900A77316 /* grace_hopper.jpg */; };
 		1077670E210FBBB6007A19A7 /* liberty.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1077670D210FBBB6007A19A7 /* liberty.jpg */; };
 		1077670F210FBBB6007A19A7 /* liberty.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1077670D210FBBB6007A19A7 /* liberty.jpg */; };
@@ -63,7 +62,6 @@
 		1001E6F620CEE0DD00445CB3 /* UIUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
 		1001E6F820CF021E00445CB3 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		1001E6FC20CF0C8F00445CB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		10224B572087E43100A77316 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		10224B5B2087E49F00A77316 /* MLKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLKitExtensions.swift; sourceTree = "<group>"; };
 		10224B702087E5A900A77316 /* grace_hopper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = grace_hopper.jpg; path = Resources/grace_hopper.jpg; sourceTree = "<group>"; };
 		1077670D210FBBB6007A19A7 /* liberty.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = liberty.jpg; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 				7E460EED72EF7E314A314658 /* Pods-VisionExampleObjC.debug.xcconfig */,
 				EDF110E3BE78BF79481C0B51 /* Pods-VisionExampleObjC.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -215,7 +212,6 @@
 			isa = PBXGroup;
 			children = (
 				BB287B3820729CE90069707A /* AppDelegate.swift */,
-				10224B572087E43100A77316 /* ViewController.swift */,
 				10224B5B2087E49F00A77316 /* MLKitExtensions.swift */,
 				1001E6F620CEE0DD00445CB3 /* UIUtilities.swift */,
 				1001E6F820CF021E00445CB3 /* CameraViewController.swift */,
@@ -583,7 +579,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10224B582087E43100A77316 /* ViewController.swift in Sources */,
 				1001E6F920CF021E00445CB3 /* CameraViewController.swift in Sources */,
 				BB287B3920729CE90069707A /* AppDelegate.swift in Sources */,
 				4ADD356323BAC29A001277A7 /* MLKitExtensions.swift in Sources */,
