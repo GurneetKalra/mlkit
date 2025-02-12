@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0208972E10E42681F763F588 /* Pods_VisionExampleObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A804B149F9AA0B2AA0FE48 /* Pods_VisionExampleObjC.framework */; };
 		1001E6F720CEE0DD00445CB3 /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1001E6F620CEE0DD00445CB3 /* UIUtilities.swift */; };
 		1001E6F920CF021E00445CB3 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1001E6F820CF021E00445CB3 /* CameraViewController.swift */; };
 		1001E6FD20CF0C8F00445CB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1001E6FC20CF0C8F00445CB3 /* Assets.xcassets */; };
@@ -44,6 +45,8 @@
 		1BB7EC7826AB69660082BEE8 /* korean_sparse.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB7EC7126AB69660082BEE8 /* korean_sparse.png */; };
 		1BB7EC7926AB69660082BEE8 /* korean_sparse.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB7EC7126AB69660082BEE8 /* korean_sparse.png */; };
 		4ADD356323BAC29A001277A7 /* MLKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10224B5B2087E49F00A77316 /* MLKitExtensions.swift */; };
+		51C629F1C7DA0941E1B89015 /* Pods_VisionExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13F648BD908DFFFE363BEF98 /* Pods_VisionExample.framework */; };
+		685C20F12D5C7146001589B0 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 685C20F02D5C7146001589B0 /* Podfile */; };
 		7202DC6920D0C1A300034C35 /* qr_code.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7202DC6420D0C1A300034C35 /* qr_code.jpg */; };
 		7202DC6A20D0C1A300034C35 /* image_has_text.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7202DC6520D0C1A300034C35 /* image_has_text.jpg */; };
 		7202DC6B20D0C1A300034C35 /* barcode_128.png in Resources */ = {isa = PBXBuildFile; fileRef = 7202DC6620D0C1A300034C35 /* barcode_128.png */; };
@@ -56,7 +59,6 @@
 		BB287B3E20729CE90069707A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB287B3C20729CE90069707A /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
-
 /* Begin PBXFileReference section */
 		1001E6F620CEE0DD00445CB3 /* UIUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
 		1001E6F820CF021E00445CB3 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 		10224B5B2087E49F00A77316 /* MLKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLKitExtensions.swift; sourceTree = "<group>"; };
 		10224B702087E5A900A77316 /* grace_hopper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = grace_hopper.jpg; path = Resources/grace_hopper.jpg; sourceTree = "<group>"; };
 		1077670D210FBBB6007A19A7 /* liberty.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = liberty.jpg; sourceTree = "<group>"; };
+		10CFFFD6568A4BBC362F54B9 /* Pods-VisionExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisionExample.debug.xcconfig"; path = "Target Support Files/Pods-VisionExample/Pods-VisionExample.debug.xcconfig"; sourceTree = "<group>"; };
 		10E114E020E5CBAA0013E4A4 /* VisionExampleObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisionExampleObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E114E220E5CBAA0013E4A4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		10E114E320E5CBAA0013E4A4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -77,7 +80,7 @@
 		10E1151620EBF6220013E4A4 /* CameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		10E1151820EBF7E10013E4A4 /* UIImage+VisionDetection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+VisionDetection.h"; sourceTree = "<group>"; };
 		10E1151920EBF7E10013E4A4 /* UIImage+VisionDetection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+VisionDetection.m"; sourceTree = "<group>"; };
-		1B32934C280E30E100761318 /* MLKSegmentationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLKSegmentationTests.m; sourceTree = "<group>"; };
+		13F648BD908DFFFE363BEF98 /* Pods_VisionExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VisionExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B8783002808DE3900EACC08 /* devanagari.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = devanagari.png; path = Resources/devanagari.png; sourceTree = "<group>"; };
 		1B8783012808DE3900EACC08 /* chinese.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chinese.png; path = Resources/chinese.png; sourceTree = "<group>"; };
 		1B8783022808DE3900EACC08 /* japanese.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = japanese.png; path = Resources/japanese.png; sourceTree = "<group>"; };
@@ -86,16 +89,21 @@
 		1BB7EC6F26AB69650082BEE8 /* japanese_sparse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = japanese_sparse.png; path = Resources/japanese_sparse.png; sourceTree = "<group>"; };
 		1BB7EC7026AB69650082BEE8 /* devanagari_sparse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = devanagari_sparse.png; path = Resources/devanagari_sparse.png; sourceTree = "<group>"; };
 		1BB7EC7126AB69660082BEE8 /* korean_sparse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = korean_sparse.png; path = Resources/korean_sparse.png; sourceTree = "<group>"; };
+		357DA5DCCBDF2FEDB0ABF4C3 /* Pods-VisionExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisionExample.release.xcconfig"; path = "Target Support Files/Pods-VisionExample/Pods-VisionExample.release.xcconfig"; sourceTree = "<group>"; };
+		685C20F02D5C7146001589B0 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		7202DC6420D0C1A300034C35 /* qr_code.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = qr_code.jpg; path = Resources/qr_code.jpg; sourceTree = "<group>"; };
 		7202DC6520D0C1A300034C35 /* image_has_text.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = image_has_text.jpg; path = Resources/image_has_text.jpg; sourceTree = "<group>"; };
 		7202DC6620D0C1A300034C35 /* barcode_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = barcode_128.png; path = Resources/barcode_128.png; sourceTree = "<group>"; };
 		7202DC6720D0C1A300034C35 /* beach.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = beach.jpg; path = Resources/beach.jpg; sourceTree = "<group>"; };
+		7E460EED72EF7E314A314658 /* Pods-VisionExampleObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisionExampleObjC.debug.xcconfig"; path = "Target Support Files/Pods-VisionExampleObjC/Pods-VisionExampleObjC.debug.xcconfig"; sourceTree = "<group>"; };
 		A4F89297243BB4BE00B58767 /* bird.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = bird.tflite; path = Resources/bird.tflite; sourceTree = "<group>"; };
 		A4F89298243BB4BF00B58767 /* bird.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bird.jpg; path = Resources/bird.jpg; sourceTree = "<group>"; };
 		BB287B3520729CE90069707A /* VisionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB287B3820729CE90069707A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB287B3D20729CE90069707A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BB287B4420729CE90069707A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDF110E3BE78BF79481C0B51 /* Pods-VisionExampleObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VisionExampleObjC.release.xcconfig"; path = "Target Support Files/Pods-VisionExampleObjC/Pods-VisionExampleObjC.release.xcconfig"; sourceTree = "<group>"; };
+		F9A804B149F9AA0B2AA0FE48 /* Pods_VisionExampleObjC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VisionExampleObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0208972E10E42681F763F588 /* Pods_VisionExampleObjC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51C629F1C7DA0941E1B89015 /* Pods_VisionExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +167,27 @@
 			path = VisionExampleObjC;
 			sourceTree = "<group>";
 		};
+		2CEAF5BCE9D4120A6204240A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				13F648BD908DFFFE363BEF98 /* Pods_VisionExample.framework */,
+				F9A804B149F9AA0B2AA0FE48 /* Pods_VisionExampleObjC.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA85983A092184694482101F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				10CFFFD6568A4BBC362F54B9 /* Pods-VisionExample.debug.xcconfig */,
+				357DA5DCCBDF2FEDB0ABF4C3 /* Pods-VisionExample.release.xcconfig */,
+				7E460EED72EF7E314A314658 /* Pods-VisionExampleObjC.debug.xcconfig */,
+				EDF110E3BE78BF79481C0B51 /* Pods-VisionExampleObjC.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BB287B2C20729CE90069707A = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +196,9 @@
 				BB287B3720729CE90069707A /* VisionExample */,
 				10E114E120E5CBAA0013E4A4 /* VisionExampleObjC */,
 				BB287B3620729CE90069707A /* Products */,
+				685C20F02D5C7146001589B0 /* Podfile */,
+				BA85983A092184694482101F /* Pods */,
+				2CEAF5BCE9D4120A6204240A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -206,9 +240,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 10E1150F20E5CBAE0013E4A4 /* Build configuration list for PBXNativeTarget "VisionExampleObjC" */;
 			buildPhases = (
+				19133536B44B7720F09DB14C /* [CP] Check Pods Manifest.lock */,
 				10E114DC20E5CBAA0013E4A4 /* Sources */,
 				10E114DD20E5CBAA0013E4A4 /* Frameworks */,
 				10E114DE20E5CBAA0013E4A4 /* Resources */,
+				D3012C8173CD24073527A206 /* [CP] Embed Pods Frameworks */,
+				7FED623BEBE050BA3129A48D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -223,9 +260,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB287B4720729CE90069707A /* Build configuration list for PBXNativeTarget "VisionExample" */;
 			buildPhases = (
+				FF2A508761DDA4413AE9E6FC /* [CP] Check Pods Manifest.lock */,
 				BB287B3120729CE90069707A /* Sources */,
 				BB287B3220729CE90069707A /* Frameworks */,
 				BB287B3320729CE90069707A /* Resources */,
+				7B56170292DD9685A9F49C8F /* [CP] Embed Pods Frameworks */,
+				1368D2FC1737933DF19EEC99 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -249,15 +289,6 @@
 					10E114DF20E5CBAA0013E4A4 = {
 						CreatedOnToolsVersion = 9.4;
 						ProvisioningStyle = Automatic;
-					};
-					1BF9CA8E2829621C009FFC23 = {
-						ProvisioningStyle = Automatic;
-						TestTargetID = BB287B3420729CE90069707A;
-					};
-					1BFC50082726FCDB006EC1EC = {
-						CreatedOnToolsVersion = 13.0;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 10E114DF20E5CBAA0013E4A4;
 					};
 					BB287B3420729CE90069707A = {
 						CreatedOnToolsVersion = 9.2;
@@ -311,20 +342,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1BF9CA9B2829621C009FFC23 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1BFC50072726FCDB006EC1EC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		BB287B3320729CE90069707A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -338,6 +355,7 @@
 				7202DC6920D0C1A300034C35 /* qr_code.jpg in Resources */,
 				7202DC6B20D0C1A300034C35 /* barcode_128.png in Resources */,
 				7202DC6A20D0C1A300034C35 /* image_has_text.jpg in Resources */,
+				685C20F12D5C7146001589B0 /* Podfile in Resources */,
 				BB287B3E20729CE90069707A /* Main.storyboard in Resources */,
 				1BB7EC7626AB69660082BEE8 /* devanagari_sparse.png in Resources */,
 				A4F8929B243BB4BF00B58767 /* bird.jpg in Resources */,
@@ -351,6 +369,201 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1368D2FC1737933DF19EEC99 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VisionExample/Pods-VisionExample-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitFaceDetection/GoogleMVFaceDetectorResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitImageLabeling/MLKitImageLabelingResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitObjectDetection/MLKitObjectDetectionResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitObjectDetectionCommon/MLKitObjectDetectionCommonResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitPoseDetection/MLKitPoseDetectionFastResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitPoseDetectionAccurate/MLKitPoseDetectionAccurateResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitPoseDetectionCommon/MLKitPoseDetectionCommonResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitSegmentationCommon/MLKitSegmentationCommonResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitSegmentationSelfie/MLKitSegmentationSelfieResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitTextRecognition/LatinOCRResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitTextRecognitionChinese/ChineseOCRResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitTextRecognitionDevanagari/DevanagariOCRResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitTextRecognitionJapanese/JapaneseOCRResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitTextRecognitionKorean/KoreanOCRResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitXenoCommon/MLKitXenoResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMVFaceDetectorResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MLKitImageLabelingResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MLKitObjectDetectionResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MLKitObjectDetectionCommonResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MLKitPoseDetectionFastResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MLKitPoseDetectionAccurateResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MLKitPoseDetectionCommonResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MLKitSegmentationCommonResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MLKitSegmentationSelfieResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LatinOCRResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ChineseOCRResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DevanagariOCRResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JapaneseOCRResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/KoreanOCRResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MLKitXenoResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VisionExample/Pods-VisionExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		19133536B44B7720F09DB14C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VisionExampleObjC-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B56170292DD9685A9F49C8F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VisionExample/Pods-VisionExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VisionExample/Pods-VisionExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FED623BEBE050BA3129A48D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VisionExampleObjC/Pods-VisionExampleObjC-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitFaceDetection/GoogleMVFaceDetectorResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitImageLabeling/MLKitImageLabelingResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitObjectDetection/MLKitObjectDetectionResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitObjectDetectionCommon/MLKitObjectDetectionCommonResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitPoseDetection/MLKitPoseDetectionFastResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitPoseDetectionAccurate/MLKitPoseDetectionAccurateResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitPoseDetectionCommon/MLKitPoseDetectionCommonResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitSegmentationCommon/MLKitSegmentationCommonResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitSegmentationSelfie/MLKitSegmentationSelfieResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitTextRecognition/LatinOCRResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitTextRecognitionChinese/ChineseOCRResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitTextRecognitionDevanagari/DevanagariOCRResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitTextRecognitionJapanese/JapaneseOCRResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitTextRecognitionKorean/KoreanOCRResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitXenoCommon/MLKitXenoResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMVFaceDetectorResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MLKitImageLabelingResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MLKitObjectDetectionResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MLKitObjectDetectionCommonResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MLKitPoseDetectionFastResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MLKitPoseDetectionAccurateResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MLKitPoseDetectionCommonResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MLKitSegmentationCommonResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MLKitSegmentationSelfieResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LatinOCRResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ChineseOCRResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DevanagariOCRResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JapaneseOCRResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/KoreanOCRResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MLKitXenoResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VisionExampleObjC/Pods-VisionExampleObjC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3012C8173CD24073527A206 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VisionExampleObjC/Pods-VisionExampleObjC-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VisionExampleObjC/Pods-VisionExampleObjC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF2A508761DDA4413AE9E6FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VisionExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		10E114DC20E5CBAA0013E4A4 /* Sources */ = {
@@ -380,19 +593,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		1BF9CAA128296229009FFC23 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BB287B3420729CE90069707A /* VisionExample */;
-			targetProxy = 1BF9CAA028296229009FFC23 /* PBXContainerItemProxy */;
-		};
-		1BFC50102726FCDB006EC1EC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 10E114DF20E5CBAA0013E4A4 /* VisionExampleObjC */;
-			targetProxy = 1BFC500F2726FCDB006EC1EC /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		BB287B3C20729CE90069707A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -407,6 +607,7 @@
 /* Begin XCBuildConfiguration section */
 		10E1150920E5CBAE0013E4A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E460EED72EF7E314A314658 /* Pods-VisionExampleObjC.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -422,6 +623,7 @@
 		};
 		10E1150A20E5CBAE0013E4A4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDF110E3BE78BF79481C0B51 /* Pods-VisionExampleObjC.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -550,10 +752,11 @@
 		};
 		BB287B4820729CE90069707A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10CFFFD6568A4BBC362F54B9 /* Pods-VisionExample.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = VLCL38VDQ4;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/VisionExample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -569,10 +772,11 @@
 		};
 		BB287B4920729CE90069707A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 357DA5DCCBDF2FEDB0ABF4C3 /* Pods-VisionExample.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = VLCL38VDQ4;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/VisionExample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
