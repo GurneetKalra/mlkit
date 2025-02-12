@@ -44,6 +44,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
   /// The detector row with which detection was most recently run.
   private var lastDetectorRow: DetectorPickerRow?
 
+  private lazy var feedbackLabel: UILabel = {
+    let label = UILabel()
+    label.translatesAutoresizingMaskIntoConstraints = false
+    label.textColor = .white
+    label.textAlignment = .center
+    label.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+    return label
+  }()
+
   // MARK: - IBOutlets
 
   @IBOutlet fileprivate weak var detectorPicker: UIPickerView!
@@ -85,6 +94,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
 
     let defaultRow = (DetectorPickerRow.rowsCount / 2) - 1
     detectorPicker.selectRow(defaultRow, inComponent: 0, animated: false)
+
+    view.addSubview(feedbackLabel)
+    NSLayoutConstraint.activate([
+      feedbackLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+      feedbackLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+      feedbackLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+      feedbackLabel.heightAnchor.constraint(equalToConstant: 44)
+    ])
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -262,6 +279,35 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
           self.showResults()
         }
       }
+    } else {
+      let options = PoseDetectorOptions()
+      options.detectorMode = .stream
+      self.poseDetector = PoseDetector.poseDetector(options: options)
+      self.poseDetector?.process(inputImage) { poses, error in
+        guard error == nil, let poses = poses, !poses.isEmpty else {
+          let errorString = error?.localizedDescription ?? Constants.detectionNoResultsMessage
+          self.resultsText = "Pose detection failed with error: \(errorString)"
+          self.showResults()
+          return
+        }
+        let transform = self.transformMatrix()
+
+        // Pose detected. Currently, only single person detection is supported.
+        poses.forEach { pose in
+          let poseOverlayView = UIUtilities.createPoseOverlayView(
+            forPose: pose,
+            inViewWithBounds: self.annotationOverlayView.bounds,
+            lineWidth: Constants.lineWidth,
+            dotRadius: Constants.smallDotRadius,
+            positionTransformationClosure: { (position) -> CGPoint in
+              return self.pointFrom(position).applying(transform)
+            }
+          )
+          self.annotationOverlayView.addSubview(poseOverlayView)
+          self.resultsText = "Pose Detected"
+          self.showResults()
+        }
+      }
     }
   }
 
@@ -279,7 +325,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     switch activeDetectorRow {
     case .detectPoseAccurate:
       let options = PoseDetectorOptions()
-      options.detectorMode = .singleImage
+      options.detectorMode = .stream
       self.poseDetector = PoseDetector.poseDetector(options: options)
     }
     self.lastDetectorRow = activeDetectorRow
@@ -344,9 +390,9 @@ private enum DetectorPickerRow: Int {
 private enum Constants {
   static let images = ["grace_hopper.jpg"]
   static let detectionNoResultsMessage = "No results returned."
-  static let smallDotRadius: CGFloat = 5.0
+  static let smallDotRadius: CGFloat = 6.0
   static let largeDotRadius: CGFloat = 10.0
-  static let lineWidth: CGFloat = 3.0
+  static let lineWidth: CGFloat = 2.0
 }
 
 // Helper function inserted by Swift 4.2 migrator.
